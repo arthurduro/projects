@@ -1,0 +1,32 @@
+#header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 1005;
+  background: #0284d1;
+  color: rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+}
+
+.header-nav .header-nav-brand img {
+  max-height: 140px;
+  margin-top: -25px;
+  
+}
+
+#menubar.menubar-inverse:before {
+  background: #FDA329;
+}
+
+.menubar-inverse .gui-icon {
+    color: rgb(255, 255, 255);
+}
+
+.card.style-transparent, .card .style-transparent {
+    background-color: white;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    color: inherit;
+}

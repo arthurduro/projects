@@ -1,0 +1,35 @@
+from django.db import models
+
+# Create your models here.
+
+class Marca(models.Model):
+	nombre = models.CharField(max_length=100)
+	def __unicode__(self):
+	    return self.nombre
+
+class Categoria(models.Model):
+	categoria_id = models.AutoField(primary_key=True)
+	nombre = models.CharField(max_length=100)	
+	def __unicode__(self):
+	    return self.nombre
+
+class Producto(models.Model):
+	nombre = models.CharField(max_length=100)
+	descripcion = models.CharField(max_length=100)
+	categoria = models.ForeignKey(Categoria)
+	marca = models.ForeignKey(Marca)
+	modelo = models.CharField(max_length=100)
+	foto = models.ImageField()
+	nro_serie = models.IntegerField()
+	stock = models.IntegerField()	
+	costo = models.IntegerField()
+	precio_unitario = models.IntegerField()
+
+	def __unicode__(self):
+	    return self.nombre
+
+
+
+
+	
+		
