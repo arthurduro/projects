@@ -10,30 +10,34 @@
 					<div class="row">
 						<div class="col-sm-6 col-sm-offset-2">
 							<br>
-							<span class="text-lg text-bold text-primary">MATERIAL ADMIN</span>
+							<span class="text-lg text-bold text-primary">LOGIN</span>
 							<br><br>
-							<form class="form floating-label" accept-charset="utf-8" method="post"> {% csrf_token %}
-								{{form.non_field_errors}}
+							<form class="form form-validate floating-label"  method="post"> {% csrf_token %}
+								{% if form.non_field_errors%}
+								<div class="alert alert-danger" role="alert">
+									{{form.non_field_errors|removetags:"ul li"}}
+								</div>
+								{% endif %}
 								<div class="form-group {% if form.errors.username %}has-error{%endif%}">
 									<input type="text" class="form-control" id="username" name="username">
 								
-									<span id="Name1-error" class="help-block">{{form.errors.username}}</span>
+									<span id="Name1-error" class="help-block">
+										{{ form.errors.username|removetags:"ul li" }}
+									</span>
 									<label for="username">Username</label>
 
 								</div>
-								<div class="form-group">
+								<div class="form-group {% if form.errors.password %}has-error{%endif%}">
 									<input type="password" class="form-control" id="password" name="password">
+									<span id="Name1-error" class="help-block">
+										{{ form.errors.password|removetags:"ul li" }}
+									</span>
 									<label for="password">Password</label>
-									<p class="help-block"><a href="#">{{form.errors.password}}</a></p>
 								</div>
 								<br>
 								<div class="row">
 									<div class="col-xs-6 text-left">
-										<div class="checkbox checkbox-inline checkbox-styled">
-											<label>
-												<input type="checkbox"> <span>Remember me</span>
-											</label>
-										</div>
+										
 									</div><!--end .col -->
 									<div class="col-xs-6 text-right">
 										<button class="btn btn-primary btn-raised" type="submit">Login</button>

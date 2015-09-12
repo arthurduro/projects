@@ -140,7 +140,7 @@
 								<li><a href="../../html/pages/calendar.html">My appointments</a></li>
 								<li class="divider"></li>
 								<li><a href="../../html/pages/locked.html"><i class="fa fa-fw fa-lock"></i> Lock</a></li>
-								<li><a href="../../html/pages/login.html"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
+								<li><a href="/logout"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
 							</ul><!--end .dropdown-menu -->
 						</li><!--end .dropdown -->
 					</ul><!--end .header-nav-profile -->
@@ -175,6 +175,7 @@
 			<!-- END CONTENT -->
 
 			<!-- BEGIN MENUBAR-->
+			{% if user.is_authenticated %}
 			<div id="menubar" class="menubar-inverse ">
 				<div class="menubar-fixed-panel">
 					<div>
@@ -429,7 +430,7 @@
 				</div><!--end .menubar-scroll-panel-->
 			</div><!--end #menubar-->
 			<!-- END MENUBAR -->
-
+			{% endif %}
 			<!-- BEGIN OFFCANVAS RIGHT -->
 			<div class="offcanvas">
 
