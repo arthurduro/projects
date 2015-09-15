@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from django.contrib import admin
+from django.conf import settings
 admin.autodiscover()
 from model_report import report
 report.autodiscover()
@@ -23,5 +23,7 @@ report.autodiscover()
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('apps.inicio.urls')),
+    url(r'^', include('apps.producto.urls')),
     url(r'^report/', include('model_report.urls')),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 ]

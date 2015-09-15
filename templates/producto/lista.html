@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="section-body">
+	<div class="row">
+    
+	<h1></h1>
+	
+	</div>
+</div>
+{% load staticfiles %}
+
+<section class="style-default-bright">
+					<div class="section-body">
+						<h2 class="text-primary">Productos</h2>
+						
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Categoria</th>
+									<th>Marca</th>
+									<th>Foto</th>
+									<th class="text-right">Actions</th>
+								</tr>
+							</thead>
+							<tbody>
+							{% for datos in object_list %}
+								<tr>
+									<td>{{datos.nombre}}</td>
+									<td>{{datos.categoria}}</td>
+									<td>{{datos.marca}}</td>
+									<td>
+									<img src="{{datos.foto.url}}" style="width: 200px" alt="">
+									</td>
+									<td class="text-right">
+										<button type="button" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="fa fa-pencil"></i></button>
+										<button type="button" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Copy row"><i class="fa fa-copy"></i></button>
+										<button type="button" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="fa fa-trash-o"></i></button>
+									</td>
+								</tr>
+							{% endfor %}
+							</tbody>
+						</table>
+					</div><!--end .section-body -->
+				</section>
+{% endblock content %}
+

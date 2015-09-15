@@ -19,7 +19,11 @@
 		<link rel="stylesheet" href="{% static "css/theme-default/materialadmin.css"%}">
 		<link rel="stylesheet" href="{% static "css/theme-default/font-awesome.min.css"%}">
 		<link rel="stylesheet" href="{% static "css/theme-default/material-design-iconic-font.min.css"%}">
+		<link type="text/css" rel="stylesheet" href="{% static "css/theme-default/libs/DataTables/jquery.dataTables.css"%}">
+		<link type="text/css" rel="stylesheet" href="{% static "css/theme-default/libs/DataTables/extensions/dataTables.colVis.css"%}">
+		<link type="text/css" rel="stylesheet" href="{% static "css/theme-default/libs/DataTables/extensions/dataTables.tableTools.css"%}">
 		<link rel="stylesheet" href="{% static "css/theme-default/libs/rickshaw/rickshaw.css"%}">
+
 
 		<link rel="stylesheet" href="{% static "css/theme-default/libs/morris/morris.core.css"%}">
 
@@ -205,9 +209,9 @@
 
 						<!-- BEGIN EMAIL -->
 						<li class="gui-folder">
-							<a>
+							<a href="/listaproducto">
 								<div class="gui-icon"><i class="md md-email"></i></div>
-								<span class="title">Email</span>
+								<span class="title">Productos</span>
 							</a>
 							<!--start submenu -->
 							<ul>
@@ -680,14 +684,19 @@
 		<!-- BEGIN JAVASCRIPT -->
 		<script src="{% static "js/libs/jquery/jquery-1.11.2.min.js"%}"></script>
 		<script src="{% static "js/libs/jquery/jquery-migrate-1.2.1.min.js"%}"></script>
+	
 		<script src="{% static "js/libs/bootstrap/bootstrap.min.js"%}"></script>
 		<script src="{% static "js/libs/spin.js/spin.min.js"%}"></script>
 		<script src="{% static "js/libs/autosize/jquery.autosize.min.js"%}"></script>
+		<script src="{% static "js/libs/DataTables/jquery.dataTables.js"%}"></script>
+		<script src="{% static "js/libs/DataTables/extensions/ColVis/js/dataTables.colVis.js"%}"></script>
+
 		<script src="{% static "js/libs/moment/moment.min.js"%}"></script>
 		<script src="{% static "js/libs/flot/jquery.flot.min.js"%}"></script>
 		<script src="{% static "js/libs/flot/jquery.flot.time.min.js"%}"></script>
 		<script src="{% static "js/libs/flot/jquery.flot.resize.min.js"%}"></script>
 		<script src="{% static "js/libs/flot/jquery.flot.orderBars.js"%}"></script>
+		
 		<script src="{% static "js/libs/flot/jquery.flot.pie.js"%}"></script>
 		<script src="{% static "js/libs/flot/curvedLines.js"%}"></script>
 		<script src="{% static "js/libs/jquery-knob/jquery.knob.min.js"%}"></script>
@@ -705,6 +714,9 @@
 		<script src="{% static "js/core/source/AppVendor.js"%}"></script>
 		<script src="{% static "js/core/demo/Demo.js"%}"></script>
 		<script src="{% static "js/core/demo/DemoDashboard.js"%}"></script>
+		{% block js %}
+		    
+		{% endblock js %}
 		
 		<!-- END JAVASCRIPT -->
 

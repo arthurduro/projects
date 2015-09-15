@@ -8,7 +8,6 @@ class Marca(models.Model):
 	    return self.nombre
 
 class Categoria(models.Model):
-	categoria_id = models.AutoField(primary_key=True)
 	nombre = models.CharField(max_length=100)	
 	def __unicode__(self):
 	    return self.nombre
@@ -19,7 +18,7 @@ class Producto(models.Model):
 	categoria = models.ForeignKey(Categoria)
 	marca = models.ForeignKey(Marca)
 	modelo = models.CharField(max_length=100)
-	foto = models.ImageField()
+	foto = models.ImageField(upload_to='productos')
 	nro_serie = models.IntegerField()
 	stock = models.IntegerField()	
 	costo = models.IntegerField()
