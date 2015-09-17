@@ -1,18 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="section-body">
-	<div class="row">
-    
-	<h1></h1>
-	
-	</div>
-</div>
+
 {% load staticfiles %}
 
 <section class="style-default-bright">
 					<div class="section-body">
 						<h2 class="text-primary">Productos</h2>
-						
+					
 						<table class="table table-hover">
 							<thead>
 								<tr>
@@ -20,7 +14,7 @@
 									<th>Categoria</th>
 									<th>Marca</th>
 									<th>Foto</th>
-									<th class="text-right">Actions</th>
+									<th class="text-right">Acciones</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -33,9 +27,18 @@
 									<img src="{{datos.foto.url}}" style="width: 200px" alt="">
 									</td>
 									<td class="text-right">
-										<button type="button" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Edit row"><i class="fa fa-pencil"></i></button>
+										<a href="/edit_producto/{{ datos.id }}" class="btn ink-reaction btn-floating-action btn-info"><i class="fa fa-pencil"></i></a>
+
+										<a href="/edit_producto/{{ datos.id }}" class="btn ink-reaction btn-floating-action btn-danger"><i class="fa fa-trash-o"></i></a>
+
+										<a href="/edit_producto/{{ datos.id }}"  class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Editar {{ datos.nombre }}"><i class="fa fa-pencil"></i></a>
+
+										
 										<button type="button" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Copy row"><i class="fa fa-copy"></i></button>
 										<button type="button" class="btn btn-icon-toggle" data-toggle="tooltip" data-placement="top" data-original-title="Delete row"><i class="fa fa-trash-o"></i></button>
+										
+									
+										
 									</td>
 								</tr>
 							{% endfor %}

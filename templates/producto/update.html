@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load widget_tweaks %}
+
+<div class="section-body">
+
+	<div class="col-lg-offset-1 col-md-8">
+		<form class="form form-validate floating-label" novalidate="novalidate" method="post">{% csrf_token %}
+			<div class="card">
+				<div class="card-body">
+					<div class="form-group">
+						{{ form.nombre|add_class:"form-control" }}
+						<label for="Name1">Nombre</label>
+					</div>
+					<div class="form-group">
+						{{ form.descripcion|add_class:"form-control" }}
+						<label for="Email1">Descripcion</label>
+					</div>
+				
+					<div class="form-group">
+						{{ form.categoria|add_class:"form-control" }}
+						<label for="select1">Categoria</label>
+					</div>
+					<div class="form-group">
+						{{ form.marca|add_class:"form-control" }}
+						<label for="select1">Marca</label>
+					</div>
+					<div class="form-group">
+						{{ form.modelo|add_class:"form-control" }}
+						<label for="Email1">Modelo</label>
+					</div>
+					<div class="form-group">
+						{{ form.foto|add_class:"form-control" }}
+						
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+						<div class="form-group">
+							{{ form.nro_serie|add_class:"form-control" }}
+							<label for="Email1">Nro de serie</label>
+						</div>	
+						</div>
+						<div class="col-sm-6">	
+						<div class="form-group">
+							{{ form.stock|add_class:"form-control" }}
+							<label for="Email1">Stock</label>
+						</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								{{ form.costo|add_class:"form-control" }}
+								<label for="Email1">Costo</label>
+							</div>	
+						</div>
+						<div class="col-sm-6">	
+							<div class="form-group">
+								{{ form.precio_unitario|add_class:"form-control" }}
+								<label for="Email1">Precio unitario</label>
+							</div>
+						</div>
+					</div>
+				</div><!--end .card-body -->
+				<div class="card-actionbar">
+					<div class="card-actionbar-row">
+						
+						<button type="submit" class="btn ink-reaction btn-raised btn-primary">Guardar</button>
+					</div>
+				</div><!--end .card-actionbar -->
+			</div><!--end .card -->
+		</form>
+	</div>
+</div>
+
+{% endblock content %}
+
+

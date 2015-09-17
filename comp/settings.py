@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'apps.inicio',
     'apps.producto',
     'model_report',
-    'rest_framework',
+    'widget_tweaks',
 
 )
 

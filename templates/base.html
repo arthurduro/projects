@@ -171,6 +171,15 @@
 			<!-- BEGIN CONTENT-->
 			<div id="content">
 				<section>
+					
+					{% if messages %}
+					<div class="alert alert-success" role="alert">
+						 {% for message in messages %}
+						    <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</span>
+						    {% endfor %}
+					</div>
+					{% endif %}
+
 					{% block content %}
 					    
 					{% endblock content %}
