@@ -40,6 +40,10 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'apps.inicio',
     'apps.producto',
+    'apps.cliente',
+    'apps.proveedor',
+
+    #mis librerias
     'model_report',
     'widget_tweaks',
 

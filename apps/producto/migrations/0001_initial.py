@@ -31,7 +31,7 @@ class Migration(migrations.Migration):
                 ('nombre', models.CharField(max_length=100)),
                 ('descripcion', models.CharField(max_length=100)),
                 ('modelo', models.CharField(max_length=100)),
-                ('foto', models.ImageField(upload_to=b'')),
+                ('foto', models.ImageField(upload_to=b'productos')),
                 ('nro_serie', models.IntegerField()),
                 ('stock', models.IntegerField()),
                 ('costo', models.IntegerField()),

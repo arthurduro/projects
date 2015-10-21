@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load widget_tweaks %}
+
+<div class="section-body">
+
+  <div class="col-lg-offset-1 col-md-8">
+    <form class="form form-validate floating-label" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <div class="card">
+      <div class="card-body">
+
+      <div class="form-group {% if form.errors.nombre %}has-error {% endif %}">
+        {{ form.nombre|add_class:"form-control" }}
+        <span class="help-block">{{ form.errors.nombre|removetags:'ul li' }}</span>
+        <label for="nombre">{{ form.nombre.label }}</label>
+      </div>
+      
+      <div class="form-group {% if form.errors.descripcion %}has-error {% endif %}">
+        {{ form.descripcion|add_class:"form-control" }}
+        <span class="help-block">{{ form.errors.descripcion|removetags:'ul li' }}</span>
+        <label for="descripcion">{{ form.descripcion.label }}</label>
+      </div>
+
+      <div class="form-group {% if form.errors.categoria %}has-error {% endif %}">
+        {{ form.categoria|add_class:"form-control" }}
+        <span class="help-block">{{ form.errors.categoria|removetags:'ul li' }}</span>
+        <label for="categoria">{{ form.categoria.label }}</label>
+      </div>
+    
+      <div class="form-group {% if form.errors.marca %}has-error {% endif %}">
+        {{ form.marca|add_class:"form-control" }}
+        <span class="help-block">{{ form.errors.marca|removetags:'ul li' }}</span>
+        <label for="marca">{{ form.marca.label }}</label>
+      </div>
+
+      <div class="form-group {% if form.errors.modelo %}has-error {% endif %}">
+        {{ form.modelo|add_class:"form-control" }}
+        <span class="help-block">{{ form.errors.modelo|removetags:'ul li' }}</span>
+        <label for="modelo">{{ form.modelo.label }}</label>
+      </div>
+
+      <div class="form-group">
+         {{ form.foto|add_class:"form-control" }}
+        </div>
+      
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group {% if form.errors.nro_serie %}has-error {% endif %}">
+            {{ form.nro_serie|add_class:"form-control" }}
+          <span class="help-block">{{ form.errors.nro_serie|removetags:'ul li' }}</span>
+          <label for="nro_serie">{{ form.nro_serie.label }}</label>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group {% if form.errors.stock %}has-error {% endif %}">
+            {{ form.stock|add_class:"form-control" }}
+          <span class="help-block">{{ form.errors.stock|removetags:'ul li' }}</span>
+          <label for="stock">{{ form.stock.label }}</label>
+          </div>
+        </div>
+      </div>  
+
+            <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group {% if form.errors.costo %}has-error {% endif %}">
+            {{ form.costo|add_class:"form-control" }}
+          <span class="help-block">{{ form.errors.costo|removetags:'ul li' }}</span>
+          <label for="costo">{{ form.costo.label }}</label>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group {% if form.errors.precio_unitario %}has-error {% endif %}">
+            {{ form.precio_unitario|add_class:"form-control" }}
+          <span class="help-block">{{ form.errors.precio_unitario|removetags:'ul li' }}</span>
+          <label for="precio_unitario">{{ form.precio_unitario.label }}</label>
+          </div>
+        </div>
+      </div> 
+
+
+
+
+      </div><!--end .card-body -->
+       <div class="card-actionbar-row">
+          <a href="/listaproducto" class="btn ink-reaction btn-raised btn-primary"><i class="md md-undo"></i> Volver</a>
+          <button type="submit" class="btn ink-reaction btn-raised btn-info">Guardar <i class="md md-save"></i></button>
+        </div>
+        </div>
+      </div><!--end .card-actionbar -->
+    </div><!--end .card -->
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
+

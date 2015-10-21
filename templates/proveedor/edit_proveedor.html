@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    
+{% endblock titulo %}
+{% block content %}
+{% load widget_tweaks %}
+
+
+ <div class="section-body">
+    <div class="col-lg-offset-1 col-md-8">
+        <form class="form form-validate floating-label" multipar novalidate="novalidate" method="post">
+        {% csrf_token %}
+            <div class="card">
+        <h3 class="header2">Proveedor</h3>
+
+                <div class="card-body">
+                    <div class="form-group {% if form.errors.nombre %}has-error {% endif %}">
+                      {{ form.nombre|add_class:"form-control" }}
+                      <span class="help-block">{{ form.errors.nombre|removetags:'ul li' }}</span>
+                      <label for="nombre">{{ form.nombre.label }}</label>
+                    </div>
+                    <div class="form-group {% if form.errors.ci %}has-error {% endif %}">
+                      {{ form.ci|add_class:"form-control" }}
+                      <span class="help-block">{{ form.errors.ci|removetags:'ul li' }}</span>
+                      <label for="ci">{{ form.ci.label }}</label>
+                    </div>
+             
+                    <div class="form-group {% if form.errors.direccion %}has-error {% endif %}">
+                      {{ form.direccion|add_class:"form-control" }}
+                      <span class="help-block">{{ form.errors.direccion|removetags:'ul li' }}</span>
+                      <label for="direccion">{{ form.direccion.label }}</label>
+                    </div>
+
+                     <div class="form-group {% if form.errors.telefono %}has-error {% endif %}">
+                      {{ form.telefono|add_class:"form-control" }}
+                      <span class="help-block">{{ form.errors.telefono|removetags:'ul li' }}</span>
+                      <label for="telefono">{{ form.telefono.label }}</label>
+                    </div>
+
+                    <div class="form-group {% if form.errors.email %}has-error {% endif %}">
+                      {{ form.email|add_class:"form-control" }}
+                      <span class="help-block">{{ form.errors.email|removetags:'ul li' }}</span>
+                      <label for="email">{{ form.email.label }}</label>
+                    </div>
+                     <div class="form-group {% if form.errors.url %}has-error {% endif %}">
+                      {{ form.url|add_class:"form-control" }}
+                      <span class="help-block">{{ form.errors.url|removetags:'ul li' }}</span>
+                      <label for="url">{{ form.url.label }}</label>
+                    </div>
+                </div><!--end .card-body -->
+                <div class="card-actionbar">
+                  <div class="card-actionbar-row">      
+                    <button type="submit" class="btn ink-reaction btn-raised btn-primary">Guardar</button>
+                  </div>
+                </div><!--end .card-actionbar -->
+            </div><!--end .card -->
+        </form>
+    </div>
+</div>
+ {% endblock %}

@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load widget_tweaks %}
+
+<div class="section-body">
+  <div class="col-lg-offset-1 col-md-8">
+    <form class="form form-validate floating-label" novalidate="novalidate" method="post">{% csrf_token %}
+        <div class="card">
+       <h2 class="text-primary">Acregar Categoria</h2>
+
+          <div class="form-group {% if form.errors.nombre %}has-error {% endif %}">
+            {{ form.nombre|add_class:"form-control" }}
+            <span class="help-block">{{ form.errors.nombre|removetags:'ul li' }}</span>
+            <label for="nombre">{{ form.nombre.label }}</label>
+          </div>
+
+         <!--end .card-body -->
+
+          <div class="card-actionbar">
+            <div class="card-actionbar-row">
+              <button type="submit" class="btn ink-reaction btn-raised btn-primary">Guardar</button>
+            </div>
+          </div><!--end .card-actionbar -->
+        </div><!--end .card -->
+    </form>
+  </div>
+</div>
+
+{% endblock content %}
+
+

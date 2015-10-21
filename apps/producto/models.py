@@ -27,7 +27,11 @@ class Producto(models.Model):
 	def __unicode__(self):
 	    return self.nombre
 
+class Almacen(models.Model):
+	nombre = models.CharField(max_length=100)
+	producto =models.ForeignKey(Producto)
 
+		
 
 
 	

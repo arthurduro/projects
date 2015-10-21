@@ -30,3 +30,7 @@
     box-shadow: none;
     color: inherit;
 }
+
+.login{
+  bottom: 50px;
+}

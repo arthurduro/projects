@@ -1,0 +1,30 @@
+{% load i18n %}
+    
+<ul class="pagination">
+    
+    {% if page_obj.has_previous %}
+        <li class="prev"><a href="?{{ page_obj.previous_page_number.querystring }}">« </a></li>
+    {% else %}
+        <li class="disabled"><a href="#">« </a></li>
+    {% endif %}
+    
+     {% for page in page_obj.pages %}
+        {% if page %}
+            {% ifequal page page_obj.number %}
+                <li class="active current page"><a href="#">{{ page }} <span class="sr-only">(current)</span></a></li>
+            {% else %}
+                <li><a href="?{{ page.querystring }}" class="page">{{ page }}</a></li>
+            {% endifequal %}
+        {% else %}
+            ...
+        {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+        <li class=""><a href="?{{ page_obj.next_page_number.querystring }}"> »</a></li>
+
+    {% else %}
+        <li class="disabled next"><a href="#"> »</a></li>
+    {% endif %}
+    
+</ul>

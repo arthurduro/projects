@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% load staticfiles %}
+
+<section class="style-default-bright">
+	<div class="section-body">
+		<h2 class="text-primary">Proveedor</h2>
+	<a href="/CrearProveedor" class="btn waves-effect teal waves-light"><i class="mdi-content-add left"></i>Agregar</a>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Nombre</th>
+					<th>ci</th>
+					<th>direccion</th>
+					<th>telefono</th>
+					<th>emial</th>
+					<th>url</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for datos in object_list %}
+				<tr>
+					<td>{{datos.nombre}}</td>
+					<td>{{datos.ci}}</td>
+					<td>{{datos.direccion}}</td>
+					<td>{{datos.telefono}}</td>
+					<td>{{datos.email}}</td>
+					<td>{{datos.url}}</td>
+
+					
+					<td class="text-right">
+						<a href="/edit_proveedor/{{ datos.id }}" class="btn ink-reaction btn-floating-action btn-info"><i class="fa fa-pencil"></i></a>
+
+						<a href="/delete_proveedor/{{ datos.id }}" class="btn ink-reaction btn-floating-action btn-danger"><i class="fa fa-trash-o"></i></a>	
+
+					</td>
+				</tr>
+			{% endfor %}
+
+			</tbody>
+		</table>
+		{% include "cliente/_pagination.html" %}
+	</div><!--end .section-body -->
+</section>
+{% endblock content %}
+

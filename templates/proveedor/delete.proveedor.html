@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Delete proveedor</h1>
+<p>Are you sure you want to delete the proveedor {{ proveedor }}?</p>
+<form action="{% url "proveedor-delete" pk=proveedor.id %}" method="POST">
+{% csrf_token %}
+<input type="submit" value="Yes, delete." />
+<a href="{% url "proveedor-list" %}">No, cancel.</a>
+</form>
+{% endblock %}
